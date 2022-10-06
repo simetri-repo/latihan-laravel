@@ -26,3 +26,8 @@ Route::get('blog', function () {
 });
 
 Route::get('unit', '\App\Http\Controllers\UnitController@index');
+
+Route::get('/pegawai/{nama}', '\App\Http\Controllers\PegawaiController@index');
+
+Route::get('/formulir', "\App\Http\Controllers\PegawaiController@formulir");
+Route::post('/formulir/proses', '\App\Http\Controllers\PegawaiController@proses');

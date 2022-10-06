@@ -8,6 +8,8 @@ class UnitController extends Controller
 {
     public function index()
     {
-        return "Hallo ini method index, dalam controller unit";
+        $title = "Buku Sejarah";
+        $misc = ["Perang Diponegoro", "Proklamasi", "Agresi Militer"];
+        return view('biodata', ['title' => $title, 'list' => $misc]);
     }
 }
