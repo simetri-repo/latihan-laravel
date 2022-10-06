@@ -21,9 +21,10 @@ Route::get('halo', function () {
     return "Hallo, Selamat(?)";
 });
 
-Route::get('blog', function () {
-    return view('blog');
-});
+// ---------------------------- blog ---------------------------
+Route::get('/blog', '\App\Http\Controllers\BlogController@home');
+Route::get('/blog/tentang', '\App\Http\Controllers\BlogController@tentang');
+Route::get('/blog/kontak', '\App\Http\Controllers\BlogController@kontak');
 
 Route::get('unit', '\App\Http\Controllers\UnitController@index');
 
@@ -31,3 +32,5 @@ Route::get('/pegawai/{nama}', '\App\Http\Controllers\PegawaiController@index');
 
 Route::get('/formulir', "\App\Http\Controllers\PegawaiController@formulir");
 Route::post('/formulir/proses', '\App\Http\Controllers\PegawaiController@proses');
+
+Route::get('/pegawai', '\App\Http\Controllers\EmployeeController@index');
